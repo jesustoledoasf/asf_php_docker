@@ -48,3 +48,20 @@ ejemplo:
 		
 		return $ListNot;
 	} 
+
+
+    #Para la conexion con sql local hay que configurar el proxy del sdk de google
+Instalar el cliente Cloud SQL Proxy en la máquina local
+
+https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-412.0.0-darwin-x86_64.tar.gz
+
+Haz el proxy ejecutable:
+
+chmod +x cloud_sql_proxy
+
+#logearse
+
+y correr la instancia asi:
+cloud_sql_proxy  -instances=thematic-acumen-188018:us-west2:sqlsrv=tcp:192.168.1.122:1433
+
+192.168.1.122 es la ip de la maquina en la red local. el .env tambien tendra que llevar ese ip
